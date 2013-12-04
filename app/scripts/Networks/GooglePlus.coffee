@@ -25,25 +25,25 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ###
 
-class window.GooglePlus extends Network
-	# Network name.
-	network:   "GooglePlus"
+require 'Network'
+require 'Observers/**/*'
 
-	# List of observers.
-	observers: []
+class @GooglePlus extends Network
+    # Network name.
+    network:   "GooglePlus"
 
-	constructor: ->
-		# Add observers.
-		@observers.push new GooglePlusPlusOneObserver()
-		# @observers.push new GooglePlusAddToCircleObserver
-		# @observers.push new GooglePlusShareObserver
+    # List of observers.
+    observers: []
 
-	isOnNetwork: ->
-		(window.location + "").indexOf("plus.google.com") >= 0
+    constructor: ->
+        # Add observers.
+        @observers.push new GooglePlusPlusOneObserver()
 
-	integrateIntoDOM: ->
-		# Stub.
-		true
+    isOnNetwork: ->
+        (window.location + "").indexOf("plus.google.com") >= 0
 
-	getNetworkName: ->
-		@network
+    integrateIntoDOM: ->
+        true
+
+    getNetworkName: ->
+        @network
