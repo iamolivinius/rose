@@ -1,8 +1,0 @@
-node_modules
-bower_components
-.tmp
-dist
-packages
-app/main.js
-app/scripts/app.js
-.DS_Store
